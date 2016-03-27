@@ -6,7 +6,6 @@
 * Written By Ryota Niinomi
 */
 
-
 var winWidth;
 var winHeight;
 var canvas = document.getElementById('myCanvas');
@@ -51,7 +50,6 @@ var level_2 = [10, 11, 12, 13, 14, 15, 16];
 var level_3 = [16, 17, 18, 19, 20, 21, 22];
 var levelArray = [level_1, level_2, level_3];
 
-
 /* ゲーム開始関数（map.jsから呼ばれる） */
 var StartGame = function(staName) {
 	evtHandler();
@@ -60,9 +58,7 @@ var StartGame = function(staName) {
 	console.log("level=" + level);
 };
 
-
 var isTouch = ('ontouchstart' in window);
-
 
 /* 基本イベント処理 */
 var evtHandler = function() {
@@ -95,11 +91,9 @@ var evtHandler = function() {
 	/*----------------------------------------*/
 };
 
-
 window.onresize = function() {
 	fixHandler();
 }
-
 
 /* サイズ調整 */
 var fixHandler = function() {
@@ -117,7 +111,6 @@ var fixHandler = function() {
 		player.posY = (winHeight - playerImg.height) / 2;
 	}
 };
-
 
 /* レベルアップウィンドウ */
 var levelUpWindow = function(lv) {
@@ -140,7 +133,6 @@ var levelUpWindow = function(lv) {
 		});
 	});
 };
-
 
 /* スコア計算 */
 var addScore = function() {
@@ -169,7 +161,6 @@ var addScore = function() {
 	if(window.localStorage) window.localStorage.setItem('history', JSON.stringify(history));
 };
 
-
 /* ライフ計算 */
 var countLife = function() {
 	player.life--;
@@ -186,7 +177,6 @@ var countLife = function() {
 		$('#life').css('backgroundPositionY', -18*(3-player.life)+'px');  //ライフを減らす
 	}
 };
-
 
 /* 弾の処理 */
 var myShotHandler = function() {
@@ -214,7 +204,6 @@ var myShotHandler = function() {
 	}
 };
 
-
 /* 敵の処理 */
 var enemyHandler = function() {
 	for(var i = 0; i < enemies.length; i++){
@@ -225,7 +214,6 @@ var enemyHandler = function() {
 		ctx.drawImage(enemy.img, enemy.posX, enemy.posY);
 	}
 };
-
 
 /* 敵の追加 */
 var addEnemies = function() {
@@ -252,7 +240,6 @@ var addEnemies = function() {
 	}
 };
 
-
 /* ヒット判定 */
 var hitJudgeHandler = function() {
 	for(var i = 0; i < myShots.length; i++){
@@ -275,7 +262,6 @@ var hitJudgeHandler = function() {
 	}
 };
 
-
 /* プレイヤーと敵の衝突判定 */
 var EnemHitHandler = function() {
 	for(var i = 0; i < enemies.length; i++){
@@ -294,7 +280,6 @@ var EnemHitHandler = function() {
 	}
 };
 
-
 /* 弾の削除処理 */
 var delShotHandler = function() {
 	for(var i = 0; i < myShots.length; i++){
@@ -311,7 +296,6 @@ var delShotHandler = function() {
 	myShots = newMyShots;
 };
 
-
 /* 敵の削除処理 */
 var delEnemyHandler = function() {
 	var newEnemies= [];
@@ -320,7 +304,6 @@ var delEnemyHandler = function() {
 	}
 	enemies = newEnemies;
 };
-
 
 /* 方向転換のためのタッチエリア生成 */
 var drawAngleArea = function() {
@@ -401,7 +384,6 @@ var drawAngleArea = function() {
 	a_ctx_8.fill();
 };
 
-
 /* 毎回実行する処理 */
 var gameMainLoop = function() {
 	ctx.clearRect(0, 0, winWidth, winHeight);
@@ -429,7 +411,6 @@ var gameMainLoop = function() {
 	delEnemyHandler();
 	drawAngleArea();
 };
-
 
 /* 初期化 */
 var init = function() {
