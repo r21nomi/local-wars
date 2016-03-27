@@ -1,0 +1,87 @@
+/* reset_CSS */
+body, h1, h2, h3, h4, h5, h6, ul ,ol, dl, li, dt, dd, p{
+  margin:0;
+  padding:0;
+}
+h1,h2,h3,h4,h5,h6,i,address,em,strong,b{
+  font-size:100%;
+  font-weight:normal;
+  font-style:normal;
+}
+body{
+  line-height:1.0;
+  -webkit-text-size-adjust: none;
+}
+article,aside,canvas,details,figcaption,figure,footer,
+header,hgroup,menu,nav,section,summary{
+  display:block;
+}
+img{
+  border:0;
+}
+ul, ol{
+  list-style:none;
+}
+table{
+  border-spacing:0;
+  empty-cells:show;
+}
+a{
+	text-decoration:none;
+}
+
+
+/* --------------------------------------------------------- */
+
+body {
+	color: #FFF;
+	font-family: 'FOT-ドットゴシック 12 Std M';
+	font-size: 75%;
+	background: #000;
+}
+a {
+	color: #FFF;
+}
+#wrapper {
+	width: 100%;
+	height: 100%;
+	display: none;
+}
+h1 {
+	width: 240px;
+	height: 138px;
+	margin: 20px auto 10px auto;
+}
+ul {
+	width: 300px;
+	margin: 0 auto;
+	
+}
+ul li {
+	text-align: center;
+	margin: 0 auto 30px auto;
+}
+.startBtn {
+	width: 160px;
+	margin: 0 auto 20px auto;
+	font-weight: bold;
+	text-shadow: 0 -1px 1px rgba(0, 0, 0, 0.4), 0 1px 1px rgba(255, 255, 255, 0.5);
+	letter-spacing: 0;
+	box-shadow: inset 0 -1px 1px rgba(0, 0, 0, 0.9), inset 0 1px 0 rgba(255, 255, 255, 0.4);
+	border-radius: 6px;
+	padding: 15px 20px;
+	background: -webkit-gradient(linear, left top, left bottom, color-stop(0.00, #ff1a00), color-stop(1.00, #cd0000));
+	background: -webkit-linear-gradient(top, #ff1a00 0%, #cd0000 100%);
+	background: -moz-linear-gradient(top, #ff1a00 0%, #cd0000 100%);
+	background: -o-linear-gradient(top, #ff1a00 0%, #cd0000 100%);
+	background: -ms-linear-gradient(top, #ff1a00 0%, #cd0000 100%);
+	background: linear-gradient(to bottom, #ff1a00 0%, #cd0000 100%);
+	cursor: pointer;
+}
+.startBtn a {
+	font-size: 125%;
+	display: block;
+}
+.startBtn:hover {
+	opacity: 0.8;
+}

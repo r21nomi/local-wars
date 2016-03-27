@@ -1,0 +1,231 @@
+/* reset_CSS */
+body, h1, h2, h3, h4, h5, h6, ul ,ol, dl, li, dt, dd, p{
+  margin:0;
+  padding:0;
+}
+h1,h2,h3,h4,h5,h6,i,address,em,strong,b{
+  font-size:75%;
+  font-weight:normal;
+  font-style:normal;
+}
+body{
+  line-height:1.0;
+  -webkit-text-size-adjust: none;
+}
+article,aside,canvas,details,figcaption,figure,footer,
+header,hgroup,menu,nav,section,summary{
+  display:block;
+}
+img{
+  border:0;
+}
+ul, ol{
+  list-style:none;
+}
+table{
+  border-spacing:0;
+  empty-cells:show;
+}
+a{
+	text-decoration:none;
+}
+
+
+/* --------------------------------------------------------- */
+
+body {
+	margin: 0;
+	padding: 0;
+	font-family: 'FOT-ドットゴシック 12 Std M';
+	color: #FFF;
+}
+#wrapper {
+	width: 100%;
+	height: 100%;
+	position: relative;
+	display: none;
+}
+#map {
+	width: 320px;
+	height: 480px;
+	position: absolute;
+	top: 0;
+	left: 0;
+}
+canvas {
+	position: absolute;
+	top: 0;
+	left: 0;
+}
+
+/* スコアエリア */
+#scoreArea, #lifeArea {
+	color: #F00;
+	text-shadow: 2px 2px 4px #FFF;
+}
+#scoreArea {
+	width: 100%;
+	height: 60px;
+	position: absolute;
+	padding: 10px;
+}
+ul li {
+	font-size: 75%;
+	margin-bottom: 5px;
+}
+.scoreValue {
+	font-family: 'Press Start 2P', cursive;
+	font-size: 100%;
+	font-weight: bold;
+}
+#hiScore {
+	margin-bottom: 20px;
+}
+#lifeArea {
+	width: 64px;
+	height: 40px;
+	position: absolute;
+	top: 0;
+	right: 0;
+	left: auto;
+	padding: 10px;
+}
+#life {
+	width: 64px;
+	height: 18px;
+	background: url(../../img/game/life.png) left top no-repeat;
+	/* overflow: hidden; */
+}
+
+
+/* ウィンドウ */
+.gWindow {
+	width: 100%;
+	height: 100%;
+	position: absolute;
+	top: 0;
+	left: 0;
+	background: rgba(0, 0, 0, 0.7);
+	opacity: 0;
+	display: none;
+}
+.gWindow ul {
+	width: 300px;
+	height: 250px;
+	background: #000;
+	border-radius: 8px;
+	margin: 0 auto;
+}
+.gWindow li {
+	font-size: 75%;
+	text-align: center;
+	padding-top: 10px;
+}
+
+
+/* ゲームススタートウィンドウ */
+#gStartWindow li:first-child {
+	height: 20px;
+	font-size: 160%;
+	font-weight: bold;
+	text-align: center;
+	padding-top: 100px;
+}
+
+
+/* レベル表示ウィンドウ */
+#gLevelWindow li {
+	font-size: 100%;
+}
+#gLevelWindow li:first-child {
+	font-size: 125%;
+	padding-top: 40px;
+}
+#gLevelWindow span {
+	font-family: 'Press Start 2P', cursive;
+	font-size: 125%;
+}
+#startBtn {
+	width: 120px;
+	margin: 40px auto 0 auto;
+	font-weight: bold;
+	text-shadow: 0 -1px 1px rgba(0, 0, 0, 0.4), 0 1px 1px rgba(255, 255, 255, 0.5);
+	letter-spacing: 0;
+	box-shadow: inset 0 -1px 1px rgba(0, 0, 0, 0.9), inset 0 1px 0 rgba(255, 255, 255, 0.4);
+	border-radius: 6px;
+	padding: 15px 40px;
+	background: -webkit-gradient(linear, left top, left bottom, color-stop(0.00, #ff1a00), color-stop(1.00, #cd0000));
+	background: -webkit-linear-gradient(top, #ff1a00 0%, #cd0000 100%);
+	background: -moz-linear-gradient(top, #ff1a00 0%, #cd0000 100%);
+	background: -o-linear-gradient(top, #ff1a00 0%, #cd0000 100%);
+	background: -ms-linear-gradient(top, #ff1a00 0%, #cd0000 100%);
+	background: linear-gradient(to bottom, #ff1a00 0%, #cd0000 100%);
+	cursor: pointer;
+}
+#startBtn a {
+	color: #FFF;
+	display: block;
+}
+
+
+/* クリアウィンドウ */
+/*
+#clearWindow {
+	opacity: 1;
+	display: block;
+}
+*/
+#clearWindow li:first-child {
+	font-size: 125%;
+	padding-top: 60px;
+}
+#clearWindow span {
+	font-family: 'Press Start 2P', cursive;
+	font-size: 125%;
+}
+#nextBtn {
+	width: 120px;
+	margin: 40px auto 0 auto;
+	font-weight: bold;
+	text-shadow: 0 -1px 1px rgba(0, 0, 0, 0.4), 0 1px 1px rgba(255, 255, 255, 0.5);
+	letter-spacing: 0;
+	box-shadow: inset 0 -1px 1px rgba(0, 0, 0, 0.9), inset 0 1px 0 rgba(255, 255, 255, 0.4);
+	border-radius: 6px;
+	padding: 15px 40px;
+	background: -webkit-gradient(linear, left top, left bottom, color-stop(0.00, #ff1a00), color-stop(1.00, #cd0000));
+	background: -webkit-linear-gradient(top, #ff1a00 0%, #cd0000 100%);
+	background: -moz-linear-gradient(top, #ff1a00 0%, #cd0000 100%);
+	background: -o-linear-gradient(top, #ff1a00 0%, #cd0000 100%);
+	background: -ms-linear-gradient(top, #ff1a00 0%, #cd0000 100%);
+	background: linear-gradient(to bottom, #ff1a00 0%, #cd0000 100%);
+	cursor: pointer;
+}
+#clearWindow a {
+	color: #FFF;
+	display: block;	
+}
+
+
+#hitScreen {
+	width: 100%;
+	height: 100%;
+	position: absolute;
+	top: 0;
+	left: 0;
+	background: rgba(255, 255, 255, 0.8);
+	display: none;
+}
+
+
+/*--------------------------------------*/
+#forDebag {
+	width: 60px;
+	height: 30px;
+	position: absolute;
+	top: 280px;
+	left: 0;
+	text-align: center;
+	background: #F00;
+	color: #FFF;
+	cursor: pointer;
+}
