@@ -6,10 +6,8 @@
 *　Written By Ryota Niinomi
 */
 
-
 var latitude = 0;
 var longitude = 0;
-
 
 $(function(){
 	setTimeout(function() {

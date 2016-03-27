@@ -6,18 +6,16 @@
 *　Written By Ryota Niinomi
 */
 
-
 var latitude = 0;
 var longitude = 0;
 
 /* canvcas.jsにも引き継がれるグローバル変数 */
-var history = [];
+var historyInfo = [];
 var score = 0;
 var hiScore = 0;
 var level = 1;
 var nearestSta;
 var levelScore = ['200', '400', '600'];
-
 
 /* マップを生成 */
 var showMap = function(lat, lon, sName){
@@ -32,33 +30,29 @@ var showMap = function(lat, lon, sName){
 	StartGame(sName);  //Canvas.js内のStartGame関数
 };
 
-
 /* ローカルストレージから情報を取得 */
 var checkHistHandler = function(sName) {
 	if(window.localStorage) var newHistory = JSON.parse(window.localStorage.getItem('history'));  //オブジェクト形式で取得
 	if(newHistory){
 		console.log("newHistory_get");
-		history = newHistory;  //配列を上書き
-		for(var i = 0; i < history.length; i++){
-			if(history[i]['name'] == sName){  //既にプレイした駅があれば
-				nearestSta = history[i];
-				level = history[i]['level'];
+		historyInfo[0] = newHistory;  //配列を上書き
+		for(var i = 0; i < historyInfo.length; i++){
+			if(historyInfo[i]['name'] == sName){  //既にプレイした駅があれば
+				nearestSta = historyInfo[i];
+				level = historyInfo[i]['level'];
 				//ハイスコアを取得
-				hiScore = history[i]['hiscore'];
+				hiScore = historyInfo[i]['hiscore'];
 				$('#hiScore').html(hiScore);
-				console.log("ヒストリーゲット");
 			}
 		}
 	}
 	if(!nearestSta){
-		console.log("つくりました");
 		var station = { "name":sName, "hiscore":"0", "score":"0", "level":"1" };
-		history.push(station);
-		nearestSta = history[history.length-1];
+		historyInfo.push(station);
+		nearestSta = historyInfo[historyInfo.length-1];
 	}
 	showStartwin(sName, level);
 };
-
 
 /* マップサイズの調整 */
 var fixMapSize = function() {
@@ -70,12 +64,10 @@ var fixMapSize = function() {
 	});
 };
 
-
 $(window).resize(function() {
 	fixMapSize();
 	fixWin();
 });
-
 
 /* ゲームスタートウィンドウの調整 */
 var fixWin = function() {
@@ -84,7 +76,6 @@ var fixWin = function() {
 		height: winHeight + 'px'
 	})
 };
-
 
 /* ゲームスタートウィンドウの表示 */
 var showStartwin = function(sName, level) {
@@ -121,7 +112,6 @@ var showStartwin = function(sName, level) {
 		}, 4000);
 	});
 };
-
 
 /* 読み込み完了後処理 */
 $(function(){
